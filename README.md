@@ -1,5 +1,14 @@
-# Spring PetClinic Sample Application  
-# Modified By DevOps Shack  https://www.youtube.com/@devopsshack
+# Full CI/CD pipeline of java application using Jenkins   
+
+## prerequisites
+### a- installing jenkins server:
+1- creating account on aws and start creating ubntu instance
+2- after creating instance and make SSH connection on it we will run jenkins as docker using the following commands
+
+        sudo apt update   -------------- to update the system
+        sudo apt install docker.io  ------------- to install docker in the machine
+        docker run --name jenkins -p 8080:8080 -p 50000:5000 -d -v jenkins-home:/var/jenkins-home jenkins/jenkins
+
 
 [![Java CI with Maven](https://github.com/spring-petclinic/spring-framework-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-petclinic/spring-framework-petclinic/actions/workflows/maven-build.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=spring-petclinic_spring-framework-petclinic&metric=alert_status)](https://sonarcloud.io/dashboard?id=spring-petclinic_spring-framework-petclinic)
@@ -7,7 +16,7 @@
 
 This project allows the Spring community to maintain a Petclinic version with a plain old **Spring Framework configuration**
 and with a **3-layer architecture** (i.e. presentation --> service --> repository).
-The "canonical" implementation is now based on Spring Boot, Thymeleaf and [aggregate-oriented domain]([https://github.com/spring-projects/spring-petclinic/pull/200). 
+The "canonical" implementation is now based on Spring Boot, Thymeleaf and [aggregate-oriented domain]([https://github.com/spring-projects/spring-petclinic/pull/200).
 
 
 ## Understanding the Spring Petclinic application with a few diagrams
@@ -111,7 +120,7 @@ The following items should be installed in your system:
 * Maven 3.3+ (http://maven.apache.org/install.html)
 * git command line tool (https://help.github.com/articles/set-up-git)
 * Jetty 9.4+ or Tomcat 9+
-* Your prefered IDE 
+* Your prefered IDE
   * Eclipse with the m2e plugin. Note: when m2e is available, there is an m2 icon in Help -> About dialog. If m2e is not there, just follow the install process here: http://www.eclipse.org/m2e/
   * [Spring Tools Suite](https://spring.io/tools) (STS)
   * IntelliJ IDEA
@@ -135,7 +144,7 @@ Configure a Jetty or a Tomcat web container then deploy the `spring-petclinic.wa
 
 In the main menu, select `File > Open` and select the Petclinic [pom.xml](pom.xml). Click on the `Open` button.
 
-CSS files are generated from the Maven build. You can either build them on the command line `./mvnw generate-resources` 
+CSS files are generated from the Maven build. You can either build them on the command line `./mvnw generate-resources`
 or right click on the `spring-petclinic` project then `Maven -> Generates sources and Update Folders`.
 
 Go to the `Run -> Edit Configuration` then configure a Tomcat or a Jetty web container. Deploy the `spring-petclinic.war` file.
@@ -199,7 +208,7 @@ mvn jib:build
 The Spring Petclinic master branch in the main [spring-projects](https://github.com/spring-projects/spring-petclinic)
 GitHub org is the "canonical" implementation, currently based on Spring Boot and Thymeleaf.
 
-This [spring-framework-petclinic](https://github.com/spring-petclinic/spring-framework-petclinic) project is one of the [several forks](https://spring-petclinic.github.io/docs/forks.html) 
+This [spring-framework-petclinic](https://github.com/spring-petclinic/spring-framework-petclinic) project is one of the [several forks](https://spring-petclinic.github.io/docs/forks.html)
 hosted in a special GitHub org: [spring-petclinic](https://github.com/spring-petclinic).
 If you have a special interest in a different technology stack
 that could be used to implement the Pet Clinic then please join the community there.
@@ -225,7 +234,3 @@ Approved by the Spring team, this repo is a fork of the [spring-projects/spring-
 The [issue tracker](/issues) is the preferred channel for bug reports, features requests and submitting pull requests.
 
 For pull requests, editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-
-
-
